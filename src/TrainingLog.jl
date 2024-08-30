@@ -80,7 +80,8 @@ export
         
         header = generate_table_header()
         rows = 
-            [generate_table_row(week_idx[i], content_type[i], content_title[i]) for i in contents] |>
+            #[generate_table_row(week_idx[i], content_type[i], content_title[i]) for i in contents] |>
+             [generate_table_row(week_idx[i], "", content_title[i]) for i in contents] |> # test
             x -> join(x,"\n")
         footer = generate_table_footer()
         
